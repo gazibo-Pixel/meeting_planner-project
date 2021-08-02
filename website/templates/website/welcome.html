@@ -1,18 +1,39 @@
+<!DOCTYPE html>
 <html lang = 'eng'>
 <head>
     <meta charset = 'UTF-8'>
     <title> Hello </title>
 </head>
 <body>
-        <h1> Welcome to The ??? </h1>
+        <h1> Welcome to The Meeting Planner </h1>
         <p>
-            {{message}}
+           This is a demo application from a course
+           <em> Django: Getting Started </em>
+           on <a href = "https://www.pluralsight.com"> Pluralsight </a>
         </p>
+            <h2>MEETINGS</h2>
+            <ul>
+            {% for meeting in meetings %}
+            <li>
+                <a href = "{% url 'detail' meeting.id %}">
+                    {{ meeting.title }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        <h2> Other Thing Create </h2>
+        <ul>
+        {% for c in create %}
+        <li>
+            <a href = "/create/{{c.id}}">
+                {{ c.name }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href = "{% url 'room_list'  %}">
+        LookUp Created Rooms Will Yah?
+    </a>
 </body>
 <body>
-        <h2> Here you go</h2>
-        <p>
-            {{message2}}
-        </p>
-</body>
 </html>

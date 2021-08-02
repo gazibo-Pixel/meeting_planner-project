@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang=eng>
+    <head>
+        <meta charset = "UTF-8">
+        <title> NAME: {{info.name}}</title>
+    </head>
+<body>
+    <h1>{{info.name}}</h1>
+    <p>
+        This Create Thingi {{info.name}} at 
+          {{info.Number}} to be at {{info.date}}. 
+          <strong>In total there are {{num}} in this CreateThingi</strong>
+          <a href = "{% url 'home'  %}">
+            home
+        </a>
+        <br>
+        <a href = "{% url 'about' %}">
+            About
+        </a>
+    </br>
+    </p>
+</body>
+</html>

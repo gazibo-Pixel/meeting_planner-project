@@ -1,5 +1,7 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, get_object_or_404
+from .models import Name
 
-def create(request):
-    return HttpResponse('Just Created Eh!')
+def create(request, id):
+    info = get_object_or_404(Name, pk=id )
+    num = Name.objects.count()
+    return render(request, "Creative/create.html", {'info':info, 'num':num})
